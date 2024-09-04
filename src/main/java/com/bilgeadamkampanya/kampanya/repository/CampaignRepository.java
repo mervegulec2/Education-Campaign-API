@@ -20,7 +20,7 @@ public interface CampaignRepository extends JpaRepository<Campaign, Long> {
             CampaignCategory category);
 
     // Count campaigns by their status for statistics purposes
-    @Query("SELECT c.status, COUNT(c), c.id FROM Campaign c GROUP BY c.status, c.id")
+    @Query("SELECT c.status, COUNT(c) FROM Campaign c GROUP BY c.status")
     List<Object[]> countCampaignsByStatus();
 
     // Find all campaigns by status

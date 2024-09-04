@@ -97,7 +97,7 @@ public class CampaignService {
         List<Object[]> stats = campaignRepository.countCampaignsByStatus();
         return stats.stream()
                 .map(stat -> new CampaignStatusDTO(
-                        (Long) stat[2], // Add the campaignId from the statistics query result
+                        null, // Campaign ID'sine gerek yok
                         (CampaignStatus) stat[0],
                         ((Number) stat[1]).longValue() // Duruma göre kampanya sayısı
                 ))
